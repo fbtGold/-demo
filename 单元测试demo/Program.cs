@@ -16,12 +16,12 @@ namespace 单元测试demo
         }
     }
 
-    interface IPowerSupply
+    public interface IPowerSupply
     {
         int GetPower();
     }
 
-    class PowerSupply:IPowerSupply
+    public class PowerSupply:IPowerSupply
     {
         public int GetPower()
         {
@@ -29,11 +29,11 @@ namespace 单元测试demo
         }
     }
 
-    class DeskFan
+    public class DeskFan
     {
-        public PowerSupply _powerSupply;
+        public IPowerSupply _powerSupply;
 
-        public DeskFan(PowerSupply powerSupply)
+        public DeskFan(IPowerSupply powerSupply)
         {
             _powerSupply = powerSupply;
         }
