@@ -15,11 +15,17 @@ namespace 单元测试demo
             Console.WriteLine(deskFan.word());
         }
     }
-    class PowerSupply
+
+    interface IPowerSupply
     {
-        public int GoPower()
+        int GetPower();
+    }
+
+    class PowerSupply:IPowerSupply
+    {
+        public int GetPower()
         {
-            return 100;
+            return 220;
         }
     }
 
@@ -34,7 +40,7 @@ namespace 单元测试demo
 
         public string word()
         {
-            int power = _powerSupply.GoPower();
+            int power = _powerSupply.GetPower();
             if (power<=0)
             {
                 return "没电";
