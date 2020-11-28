@@ -11,7 +11,7 @@ namespace InterfaceExample2.Tests
         {
             var mock = new Mock<IPowerSupply>();
             mock.Setup(ps => ps.GetPower()).Returns(() => 0);
-
+            ///
             //var fan = new DeskFan(new PowerSupplyLowerThanZero());
             var fan = new DeskFan(mock.Object);
             var expected = "Ã»µç";
